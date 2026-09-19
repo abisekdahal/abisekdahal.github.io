@@ -386,235 +386,348 @@
         </section>
 
         <section id="publications" class="py-16 bg-slate-100/70 dark:bg-slate-800/40 border-y border-slate-200 dark:border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-                    <div>
-                        <h2 class="text-xs font-bold uppercase tracking-widest text-sky-600 dark:text-teal-400 mb-2">Scholarly Output</h2>
-                        <p class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">Publications & Preprints</p>
-                    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+            <div>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-sky-600 dark:text-teal-400 mb-2">Scholarly Output</h2>
+                <p class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">Publications & Preprints</p>
+            </div>
 
-                    <!-- Real-Time Search Bar -->
-                    <div class="relative w-full md:w-80">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
-                        <input type="text" id="pub-search" placeholder="Search title, venue, topic..." 
-                               class="w-full pl-10 pr-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 dark:focus:ring-teal-400 transition">
-                    </div>
+            <!-- Real-Time Search Bar -->
+            <div class="relative w-full md:w-80">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                <input type="text" id="pub-search" placeholder="Search title, venue, topic..." 
+                       class="w-full pl-10 pr-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 dark:focus:ring-teal-400 transition">
+            </div>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap items-center gap-2 mb-8" id="pub-filter-btns">
+            <button data-filter="all" class="pub-filter active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-sky-600 text-white shadow-sm transition">All Work</button>
+            <button data-filter="sci" class="pub-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition">SCI/Scopus Journals</button>
+            <button data-filter="conference" class="pub-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition">Conferences</button>
+            <button data-filter="patent" class="pub-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition">Patents</button>
+            <button data-filter="review" class="pub-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition">Under Review</button>
+        </div>
+
+        <!-- Publications List Container -->
+        <div class="space-y-4" id="publications-container">
+            
+            <!-- Patent 1: German Utility Patent (dahal2026har) -->
+            <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="patent">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-700">German Utility Patent</span>
+                    <span class="text-xs text-slate-500 font-mono">DE 20 2026 102 481</span>
+                    <span class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i>Registered May 18, 2026</span>
                 </div>
-
-                <!-- Category Filters -->
-                <div class="flex flex-wrap items-center gap-2 mb-8" id="pub-filter-btns">
-                    <button data-filter="all" class="pub-filter active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-sky-600 text-white shadow-sm transition">All Work</button>
-                    <button data-filter="sci" class="pub-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition">SCI/Scopus Journals</button>
-                    <button data-filter="conference" class="pub-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition">Conferences</button>
-                    <button data-filter="review" class="pub-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition">Under Review</button>
-                    <button data-filter="patent" class="pub-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition">Patents</button>
-                </div>
-
-                <!-- Publications List Container -->
-                <div class="space-y-4" id="publications-container">
-                    
-                    <!-- Item 1: German Patent -->
-                    <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="patent">
-                        <div class="flex flex-wrap items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-700">German Utility Patent</span>
-                            <span class="text-xs text-slate-500 font-mono">DE 20 2026 102 481</span>
-                            <span class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i>Granted / Registered May 18, 2026</span>
-                        </div>
-                        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
-                            System for human activity recognition using a hybrid deep-learning-assisted feature engineering
-                        </h3>
-                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
-                            <strong>Inventors:</strong> Abisek Dahal et al.
-                        </p>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">
-                            German Patent and Trade Mark Office (DPMA), Main IPC: G06N 3/08, A61B 5/11.
-                        </p>
-                        <div class="mt-4 flex flex-wrap items-center gap-2">
-                            <button onclick="openBibtexModal('patent_de_2026', 'System for human activity recognition using a hybrid deep-learning-assisted feature engineering', 'Abisek Dahal', 'German Utility Patent Office', 'DE 20 2026 102 481', '2026')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition">
-                                <i class="fa-solid fa-quote-left mr-1"></i> BibTeX
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Item 2: Future Generation Computer Systems -->
-                    <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="sci">
-                        <div class="flex flex-wrap items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700">SCI Journal (Q1)</span>
-                            <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-sky-100 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 border border-sky-300 dark:border-sky-700">IF: 7.6</span>
-                            <span class="text-xs text-slate-500 font-medium">Elsevier</span>
-                        </div>
-                        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
-                            Efficient Feature Extraction and Lightweight Hybrid Deep Models for Sensor-Based Activity Recognition
-                        </h3>
-                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
-                            <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong>, Soumen Moulik
-                        </p>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
-                            Future Generation Computer Systems (FGCS), Vol. 158, pp. 210-225, 2024.
-                        </p>
-                        <div class="mt-4 flex flex-wrap items-center gap-2">
-                            <a href="https://doi.org/10.1016/j.future.2024.01.012" target="_blank" class="px-3 py-1.5 rounded-lg bg-sky-50 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800 text-xs font-semibold hover:bg-sky-100 transition">
-                                <i class="fa-solid fa-link mr-1"></i> DOI: 10.1016/j.future.2024.01.012
-                            </a>
-                            <button onclick="openBibtexModal('dahal2024fgcs', 'Efficient Feature Extraction and Lightweight Hybrid Deep Models for Sensor-Based Activity Recognition', 'Abisek Dahal and Soumen Moulik', 'Future Generation Computer Systems', '10.1016/j.future.2024.01.012', '2024')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition">
-                                <i class="fa-solid fa-quote-left mr-1"></i> BibTeX
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Item 3: IEEE Sensors Letters -->
-                    <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="sci">
-                        <div class="flex flex-wrap items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700">SCI / Scopus</span>
-                            <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-sky-100 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 border border-sky-300 dark:border-sky-700">IEEE</span>
-                        </div>
-                        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
-                            Lightweight 1D-CNN and Spatial-Temporal Attention Network for Real-Time Sensor-Based Human Activity Recognition
-                        </h3>
-                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
-                            <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong>, Soumen Moulik
-                        </p>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
-                            IEEE Sensors Letters, Vol. 8, No. 4, pp. 1-4, Art no. 6001204, 2024.
-                        </p>
-                        <div class="mt-4 flex flex-wrap items-center gap-2">
-                            <a href="https://doi.org/10.1109/LSENS.2024.3378901" target="_blank" class="px-3 py-1.5 rounded-lg bg-sky-50 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800 text-xs font-semibold hover:bg-sky-100 transition">
-                                <i class="fa-solid fa-link mr-1"></i> DOI: 10.1109/LSENS.2024.3378901
-                            </a>
-                            <button onclick="openBibtexModal('dahal2024lsens', 'Lightweight 1D-CNN and Spatial-Temporal Attention Network for Real-Time Sensor-Based Human Activity Recognition', 'Abisek Dahal and Soumen Moulik', 'IEEE Sensors Letters', '10.1109/LSENS.2024.3378901', '2024')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition">
-                                <i class="fa-solid fa-quote-left mr-1"></i> BibTeX
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Item 4: IEEE Sensors Journal -->
-                    <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="sci">
-                        <div class="flex flex-wrap items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700">SCI Journal (Q1)</span>
-                            <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-sky-100 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 border border-sky-300 dark:border-sky-700">IF: 4.3</span>
-                            <span class="text-xs text-slate-500 font-medium">IEEE</span>
-                        </div>
-                        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
-                            Robust Uncontrolled HAR via Multi-Branch Temporal Feature Aggregation in Wearable Sensing
-                        </h3>
-                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
-                            <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong>, Soumen Moulik
-                        </p>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
-                            IEEE Sensors Journal, Vol. 25, No. 2, pp. 1892-1904, 2025.
-                        </p>
-                        <div class="mt-4 flex flex-wrap items-center gap-2">
-                            <a href="https://doi.org/10.1109/JSEN.2025.1012398" target="_blank" class="px-3 py-1.5 rounded-lg bg-sky-50 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800 text-xs font-semibold hover:bg-sky-100 transition">
-                                <i class="fa-solid fa-link mr-1"></i> DOI: 10.1109/JSEN.2025.1012398
-                            </a>
-                            <button onclick="openBibtexModal('dahal2025jsen', 'Robust Uncontrolled HAR via Multi-Branch Temporal Feature Aggregation in Wearable Sensing', 'Abisek Dahal and Soumen Moulik', 'IEEE Sensors Journal', '10.1109/JSEN.2025.1012398', '2025')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition">
-                                <i class="fa-solid fa-quote-left mr-1"></i> BibTeX
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Item 5: National Academy Science Letters -->
-                    <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="sci">
-                        <div class="flex flex-wrap items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700">SCI Indexed</span>
-                            <span class="text-xs text-slate-500 font-medium">Springer Nature</span>
-                        </div>
-                        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
-                            Energy-Aware Trajectory Optimization and Dynamic Data Collection for UAV Systems
-                        </h3>
-                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
-                            <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong>, Pratyay Kuila
-                        </p>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
-                            National Academy Science Letters, Vol. 46, pp. 312-317, 2023.
-                        </p>
-                        <div class="mt-4 flex flex-wrap items-center gap-2">
-                            <a href="https://doi.org/10.1007/s40009-023-01211-w" target="_blank" class="px-3 py-1.5 rounded-lg bg-sky-50 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800 text-xs font-semibold hover:bg-sky-100 transition">
-                                <i class="fa-solid fa-link mr-1"></i> DOI: 10.1007/s40009-023-01211-w
-                            </a>
-                            <button onclick="openBibtexModal('dahal2023nasl', 'Energy-Aware Trajectory Optimization and Dynamic Data Collection for UAV Systems', 'Abisek Dahal and Pratyay Kuila', 'National Academy Science Letters', '10.1007/s40009-023-01211-w', '2023')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition">
-                                <i class="fa-solid fa-quote-left mr-1"></i> BibTeX
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Item 6: Conference Publication -->
-                    <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="conference">
-                        <div class="flex flex-wrap items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-indigo-100 dark:bg-indigo-950/80 text-indigo-800 dark:text-indigo-300 border border-indigo-300 dark:border-indigo-700">IEEE Int'l Conference</span>
-                            <span class="text-xs text-slate-500 font-medium">Scopus Indexed</span>
-                        </div>
-                        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
-                            Wearable Sensor Data Compression and On-Device Classification for Edge-Assisted HAR
-                        </h3>
-                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
-                            <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong>, Soumen Moulik
-                        </p>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
-                            In Proceedings of International IEEE Conference on Ubiquitous Computing and Mobile Sensing (IEEE Xplore), pp. 45-51, 2024.
-                        </p>
-                        <div class="mt-4 flex flex-wrap items-center gap-2">
-                            <button onclick="openBibtexModal('dahal2024conf', 'Wearable Sensor Data Compression and On-Device Classification for Edge-Assisted HAR', 'Abisek Dahal and Soumen Moulik', 'IEEE Xplore Conference', '10.1109/CONF.2024.10231', '2024')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition">
-                                <i class="fa-solid fa-quote-left mr-1"></i> BibTeX
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Item 7: Under Review - Expert Systems with Applications -->
-                    <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="review">
-                        <div class="flex flex-wrap items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-purple-100 dark:bg-purple-950/80 text-purple-800 dark:text-purple-300 border border-purple-300 dark:border-purple-700">Under Review</span>
-                            <span class="text-xs text-slate-500 font-medium">Expert Systems with Applications (Elsevier, Q1)</span>
-                        </div>
-                        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
-                            Federated Learning Frameworks for Personalized Wearable Activity Recognition in Uncontrolled Healthcare Deployments
-                        </h3>
-                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
-                            <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong> et al.
-                        </p>
-                        <p class="text-xs text-slate-400 dark:text-slate-500 mt-1 italic">
-                            Manuscript submitted & under peer review (2026).
-                        </p>
-                    </div>
-
-                    <!-- Item 8: Under Review - Information Sciences -->
-                    <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="review">
-                        <div class="flex flex-wrap items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-purple-100 dark:bg-purple-950/80 text-purple-800 dark:text-purple-300 border border-purple-300 dark:border-purple-700">Under Review</span>
-                            <span class="text-xs text-slate-500 font-medium">Information Sciences (Elsevier, Q1)</span>
-                        </div>
-                        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
-                            Adaptive Domain Generalization for Cross-Subject Wearable Human Activity Recognition
-                        </h3>
-                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
-                            <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong> et al.
-                        </p>
-                        <p class="text-xs text-slate-400 dark:text-slate-500 mt-1 italic">
-                            Manuscript submitted & under peer review (2026).
-                        </p>
-                    </div>
-
-                    <!-- Item 9: Under Review - IEEE Transactions on Emerging Topics in Computing -->
-                    <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="review">
-                        <div class="flex flex-wrap items-center gap-2 mb-2">
-                            <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-purple-100 dark:bg-purple-950/80 text-purple-800 dark:text-purple-300 border border-purple-300 dark:border-purple-700">Under Review</span>
-                            <span class="text-xs text-slate-500 font-medium">IEEE Transactions on Emerging Topics in Computing (Q1)</span>
-                        </div>
-                        <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
-                            Energy-Efficient Edge Placement and Path Planning for Multi-UAV Systems in Emergency Mesh Networks
-                        </h3>
-                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
-                            <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong> et al.
-                        </p>
-                        <p class="text-xs text-slate-400 dark:text-slate-500 mt-1 italic">
-                            Manuscript submitted & under peer review (2026).
-                        </p>
-                    </div>
-
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                    System for Human Activity Recognition Using a Hybrid Deep-Learning-Assisted Feature Engineering
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+                    Nurul Amin Choudhury, <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong>, Soumen Moulik, Kaushik Ray, Badal Soni
+                </p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">
+                    Deutsches Patent- und Markenamt (DPMA), IPC A61B 5/11. Filed: April 29, 2026 | Registered: May 18, 2026.
+                </p>
+                <div class="mt-4 flex flex-wrap items-center gap-2">
+                    <button onclick="openBibtexModal('dahal2026har', 'System for Human Activity Recognition Using a Hybrid Deep-Learning-Assisted Feature Engineering', 'Nurul Amin Choudhury, Abisek Dahal, Soumen Moulik, Kaushik Ray, Badal Soni', 'Deutsches Patent- und Markenamt (DPMA)', 'DE 20 2026 102 481', '2026')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition">
+                        <i class="fa-solid fa-quote-left mr-1"></i> BibTeX
+                    </button>
                 </div>
             </div>
-        </section>
+
+            <!-- Item 1: IEEE Sensors Journal 2025 (dahal2025stack) -->
+            <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="sci">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700">SCI Journal (Q1)</span>
+                    <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-sky-100 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 border border-sky-300 dark:border-sky-700">IEEE</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                    Stack-HAR: Complex Human Activity Recognition With Stacking-Based Ensemble Learning Framework
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+                    <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong>, Soumen Moulik, Rohan Mukherjee
+                </p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+                    IEEE Sensors Journal, Vol. 25, No. 9, pp. 16373–16380, 2025.
+                </p>
+                <div class="mt-4 flex flex-wrap items-center gap-2">
+                    <a href="https://doi.org/10.1109/JSEN.2025.3549311" target="_blank" class="px-3 py-1.5 rounded-lg bg-sky-50 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800 text-xs font-semibold hover:bg-sky-100 transition">
+                        <i class="fa-solid fa-link mr-1"></i> DOI: 10.1109/JSEN.2025.3549311
+                    </a>
+                    <button onclick="openBibtexModal('dahal2025stack', 'Stack-HAR: Complex human activity recognition with stacking-based ensemble learning framework', 'Abisek Dahal, Soumen Moulik, and Rohan Mukherjee', 'IEEE Sensors Journal', '10.1109/JSEN.2025.3549311', '2025')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition">
+                        <i class="fa-solid fa-quote-left mr-1"></i> BibTeX
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 2: Future Generation Computer Systems 2025 (dahal2025fel) -->
+            <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="sci">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700">SCI Journal (Q1)</span>
+                    <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-sky-100 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 border border-sky-300 dark:border-sky-700">IF: 7.6</span>
+                    <span class="text-xs text-slate-500 font-medium">Elsevier</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                    FeL-MAR: Federated Learning Based Multi Resident Activity Recognition in IoT Enabled Smart Homes
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+                    <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong>, Soumen Moulik, Rohan Mukherjee
+                </p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+                    Future Generation Computer Systems, Vol. 163, p. 107552, 2025. ISSN: 0167-739X.
+                </p>
+                <div class="mt-4 flex flex-wrap items-center gap-2">
+                    <a href="https://doi.org/10.1016/j.future.2024.107552" target="_blank" class="px-3 py-1.5 rounded-lg bg-sky-50 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800 text-xs font-semibold hover:bg-sky-100 transition">
+                        <i class="fa-solid fa-link mr-1"></i> DOI: 10.1016/j.future.2024.107552
+                    </a>
+                    <button onclick="openBibtexModal('dahal2025fel', 'FeL-MAR: Federated learning based multi resident activity recognition in IoT enabled smart homes', 'Abisek Dahal, Soumen Moulik, and Rohan Mukherjee', 'Future Generation Computer Systems', '10.1016/j.future.2024.107552', '2025')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition">
+                        <i class="fa-solid fa-quote-left mr-1"></i> BibTeX
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 3: IEEE Sensors Letters 2025 (dahal2025multistream) -->
+            <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="sci">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700">SCI / Scopus</span>
+                    <span class="text-xs text-slate-500 font-medium">IEEE</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                    Multi-stream CNN-BiLSTM Framework for Enhanced Human Activity Recognition Leveraging Physiological Signal
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+                    <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong>, Soumen Moulik
+                </p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+                    IEEE Sensors Letters, Vol. 9, No. 2, pp. 1–4, 2025.
+                </p>
+                <div class="mt-4 flex flex-wrap items-center gap-2">
+                    <a href="https://doi.org/10.1109/LSENS.2025.3526446" target="_blank" class="px-3 py-1.5 rounded-lg bg-sky-50 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800 text-xs font-semibold hover:bg-sky-100 transition">
+                        <i class="fa-solid fa-link mr-1"></i> DOI: 10.1109/LSENS.2025.3526446
+                    </a>
+                    <button onclick="openBibtexModal('dahal2025multistream', 'Multistream CNN-BiLSTM framework for enhanced human activity recognition leveraging physiological signal', 'Abisek Dahal and Soumen Moulik', 'IEEE Sensors Letters', '10.1109/LSENS.2025.3526446', '2025')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition">
+                        <i class="fa-solid fa-quote-left mr-1"></i> BibTeX
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 4: IEEE Sensors Letters 2024 (dahal2024multimodel) -->
+            <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="sci">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700">SCI / Scopus</span>
+                    <span class="text-xs text-slate-500 font-medium">IEEE</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                    The Multimodel Stacking and Ensemble Framework for Human Activity Recognition
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+                    <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong>, Soumen Moulik
+                </p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+                    IEEE Sensors Letters, Vol. 8, No. 10, pp. 1–4, 2024.
+                </p>
+                <div class="mt-4 flex flex-wrap items-center gap-2">
+                    <a href="https://doi.org/10.1109/LSENS.2024.3451960" target="_blank" class="px-3 py-1.5 rounded-lg bg-sky-50 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800 text-xs font-semibold hover:bg-sky-100 transition">
+                        <i class="fa-solid fa-link mr-1"></i> DOI: 10.1109/LSENS.2024.3451960
+                    </a>
+                    <button onclick="openBibtexModal('dahal2024multimodel', 'The multimodel stacking and ensemble framework for human activity recognition', 'Abisek Dahal and Soumen Moulik', 'IEEE Sensors Letters', '10.1109/LSENS.2024.3451960', '2024')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition">
+                        <i class="fa-solid fa-quote-left mr-1"></i> BibTeX
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 5: Future Generation Computer Systems 2024 (tiwari2024knapsack) -->
+            <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="sci">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700">SCI Journal (Q1)</span>
+                    <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-sky-100 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 border border-sky-300 dark:border-sky-700">IF: 7.6</span>
+                    <span class="text-xs text-slate-500 font-medium">Elsevier</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                    A Knapsack-Based Metaheuristic for Edge Server Placement in 5G Networks With Heterogeneous Edge Capacities
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+                    Vaibhav Tiwari, Chandrasen Pandey, <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong>, Diptendu Sinha Roy, Ugo Fiore
+                </p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+                    Future Generation Computer Systems, Vol. 153, pp. 222–233, 2024. ISSN: 0167-739X.
+                </p>
+                <div class="mt-4 flex flex-wrap items-center gap-2">
+                    <a href="https://doi.org/10.1016/j.future.2023.11.028" target="_blank" class="px-3 py-1.5 rounded-lg bg-sky-50 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800 text-xs font-semibold hover:bg-sky-100 transition">
+                        <i class="fa-solid fa-link mr-1"></i> DOI: 10.1016/j.future.2023.11.028
+                    </a>
+                    <button onclick="openBibtexModal('tiwari2024knapsack', 'A knapsack-based metaheuristic for edge server placement in 5G networks with heterogeneous edge capacities', 'Vaibhav Tiwari, Chandrasen Pandey, Abisek Dahal, Diptendu Sinha Roy, and Ugo Fiore', 'Future Generation Computer Systems', '10.1016/j.future.2023.11.028', '2024')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition">
+                        <i class="fa-solid fa-quote-left mr-1"></i> BibTeX
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 6: National Academy Science Letters 2025 (dahal2025aquasense) -->
+            <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="sci">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700">SCI Journal</span>
+                    <span class="text-xs text-slate-500 font-medium">Springer</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                    AquaSense: Real-Time Smart Water Quality Monitoring and Alert System in an IoT-Enabled Environment
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+                    <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong>, Thella Lakshmi Tulasi, Soumen Moulik
+                </p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+                    National Academy Science Letters, pp. 1–5, 2025.
+                </p>
+                <div class="mt-4 flex flex-wrap items-center gap-2">
+                    <button onclick="openBibtexModal('dahal2025aquasense', 'AquaSense: Real-Time Smart Water Quality Monitoring and Alert System in an IoT-Enabled Environment', 'Abisek Dahal, Thella Lakshmi Tulasi, and Soumen Moulik', 'National Academy Science Letters', '', '2025')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition">
+                        <i class="fa-solid fa-quote-left mr-1"></i> BibTeX
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 7: IEEE TENCON 2025 (dahal2025parallel) -->
+            <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="conference">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-indigo-100 dark:bg-indigo-950/80 text-indigo-800 dark:text-indigo-300 border border-indigo-300 dark:border-indigo-700">IEEE Flagship Conference</span>
+                    <span class="text-xs text-slate-500 font-medium">Scopus Indexed</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                    Parallel Lightweight Hybrid Attention BiGRU Framework for Multi Resident Human Activity Recognition with Sparse Sensor Data
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+                    <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong>, Kaushik Ray, Soumen Moulik
+                </p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+                    In IEEE TENCON 2025 - IEEE Region 10 Conference, IEEE, pp. 998–1002, 2025.
+                </p>
+                <div class="mt-4 flex flex-wrap items-center gap-2">
+                    <button onclick="openBibtexModal('dahal2025parallel', 'Parallel Lightweight Hybrid Attention BiGRU Framework for Multi Resident Human Activity Recognition with Sparse Sensor Data', 'Abisek Dahal, Kaushik Ray, and Soumen Moulik', 'IEEE TENCON 2025', '', '2025')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition">
+                        <i class="fa-solid fa-quote-left mr-1"></i> BibTeX
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 8: IEEE IEMENTech 2025 (ryntathiang2025leveraging) -->
+            <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="conference">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-indigo-100 dark:bg-indigo-950/80 text-indigo-800 dark:text-indigo-300 border border-indigo-300 dark:border-indigo-700">IEEE Int'l Conference</span>
+                    <span class="text-xs text-slate-500 font-medium">Scopus Indexed</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                    Leveraging Gait Patterns and Machine Learning for Early Detection of Alzheimer's Disease
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+                    Shemphang Ryntathiang, <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong>, Soumen Moulik
+                </p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+                    In 8th International Conference on Electronics, Materials Engineering & Nano-Technology (IEMENTech), IEEE, pp. 1–6, 2025.
+                </p>
+                <div class="mt-4 flex flex-wrap items-center gap-2">
+                    <button onclick="openBibtexModal('ryntathiang2025leveraging', 'Leveraging Gait Patterns and Machine Learning for Early Detection of Alzheimers Disease', 'Shemphang Ryntathiang, Abisek Dahal, and Soumen Moulik', 'IEEE IEMENTech 2025', '', '2025')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition">
+                        <i class="fa-solid fa-quote-left mr-1"></i> BibTeX
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 9: Springer MINDS 2023 (dahal2023detection) -->
+            <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="conference">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-indigo-100 dark:bg-indigo-950/80 text-indigo-800 dark:text-indigo-300 border border-indigo-300 dark:border-indigo-700">Springer Proceedings</span>
+                    <span class="text-xs text-slate-500 font-medium">Scopus Indexed</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                    Detection and Classification of Waste Materials Using Deep Learning Techniques
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+                    <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong>, Oyshi Pronomy Sarker, Jahnavi Kashyap, Rakesh Kumar Gupta, Sheli Sinha Chaudhuri, Soumen Moulik
+                </p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+                    International Conference on Machine Learning, Image Processing, Network Security and Data Sciences (MINDS), Springer, pp. 75–85, 2023.
+                </p>
+                <div class="mt-4 flex flex-wrap items-center gap-2">
+                    <button onclick="openBibtexModal('dahal2023detection', 'Detection and Classification of Waste Materials Using Deep Learning Techniques', 'Abisek Dahal, Oyshi Pronomy Sarker, Jahnavi Kashyap, Rakesh Kumar Gupta, Sheli Sinha Chaudhuri, and Soumen Moulik', 'Springer MINDS Conference', '', '2023')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition">
+                        <i class="fa-solid fa-quote-left mr-1"></i> BibTeX
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 10: Springer FICTA 2022 (dahal2022trajectory) -->
+            <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="conference">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-indigo-100 dark:bg-indigo-950/80 text-indigo-800 dark:text-indigo-300 border border-indigo-300 dark:border-indigo-700">Springer Proceedings</span>
+                    <span class="text-xs text-slate-500 font-medium">Scopus Indexed</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                    Trajectory Planning and Data Collection of UAVs Over Disaster Affected Areas
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+                    <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong>, Santanu Ghosh, Pratyay Kuila, Tarun Biswas
+                </p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 italic">
+                    International Conference on Frontiers of Intelligent Computing: Theory and Applications (FICTA), Springer Nature Singapore, pp. 319–326, 2022.
+                </p>
+                <div class="mt-4 flex flex-wrap items-center gap-2">
+                    <button onclick="openBibtexModal('dahal2022trajectory', 'Trajectory planning and data collection of UAVs over disaster a affected areas', 'Abisek Dahal, Santanu Ghosh, Pratyay Kuila, and Tarun Biswas', 'Springer FICTA Conference', '', '2022')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-slate-600 transition">
+                        <i class="fa-solid fa-quote-left mr-1"></i> BibTeX
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 11: Under Review - Expert Systems with Applications -->
+            <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="review">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-purple-100 dark:bg-purple-950/80 text-purple-800 dark:text-purple-300 border border-purple-300 dark:border-purple-700">Under Review</span>
+                    <span class="text-xs text-slate-500 font-medium">Expert Systems with Applications (Elsevier, Q1)</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                    An Efficient Lightweight Knowledge Distillation Framework for Human Activity Recognition in Uncontrolled Environments
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+                    <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong>, Soumen Moulik, Rohan Mukherjee
+                </p>
+                <p class="text-xs text-slate-400 dark:text-slate-500 mt-1 italic">
+                    Submitted & Under Peer Review (2025).
+                </p>
+            </div>
+
+            <!-- Item 12: Under Review - Information Sciences -->
+            <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="review">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-purple-100 dark:bg-purple-950/80 text-purple-800 dark:text-purple-300 border border-purple-300 dark:border-purple-700">Under Review</span>
+                    <span class="text-xs text-slate-500 font-medium">Information Sciences (Elsevier, Q1)</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                    Lightweight Multi-Stream CNN-BiLSTM Framework with Multimodal Sensor Fusion for Human Activity Recognition Using IMU and Smartphone Data
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+                    <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong>, Soumen Moulik, Rohan Mukherjee
+                </p>
+                <p class="text-xs text-slate-400 dark:text-slate-500 mt-1 italic">
+                    Submitted & Under Peer Review (2025).
+                </p>
+            </div>
+
+            <!-- Item 13: Under Review - IEEE Transactions on Emerging Topics in Computing -->
+            <div class="pub-card p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-md transition" data-category="review">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                    <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-purple-100 dark:bg-purple-950/80 text-purple-800 dark:text-purple-300 border border-purple-300 dark:border-purple-700">Under Review</span>
+                    <span class="text-xs text-slate-500 font-medium">IEEE Transactions on Emerging Topics in Computing (Q1)</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                    A Hybrid Framework with Synthetic Data Augmentation for Early Prediction of Alzheimer's Disease Using Wearable Sensors
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+                    Shemphang Ryntathiang, <strong class="text-slate-800 dark:text-slate-100">Abisek Dahal</strong>, Soumen Moulik
+                </p>
+                <p class="text-xs text-slate-400 dark:text-slate-500 mt-1 italic">
+                    Submitted & Under Peer Review (2025).
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
 
         <section id="patents" class="py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
